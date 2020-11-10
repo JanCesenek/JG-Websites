@@ -1,0 +1,177 @@
+@media (max-width: 1290px) {
+    article {
+        font-size: 1rem;
+    }
+
+    article ul li, article ol li {
+        font-size: 1.4rem;
+    }
+
+    .full-brightness {
+        width: 30px;
+        height: 15px;
+    }
+    
+    .navBlink {
+        font-size: 15px;
+    }
+
+    .points {
+        font-size: 0.8rem;
+    }
+
+    .iconMode {
+        font-size: 25px;
+    }
+
+    .navBlink:hover {
+        font-size: 17px;
+    }
+
+    .dropdownContent {
+        padding: 3px 0;
+    }
+
+    #biggerSize {
+        display: none;
+    }
+
+    #smallerSizeForText, #smallerSizeForIcons {
+        display: inline;
+    }
+
+    #dropdownButton {
+            font-family: 'Grandstander', cursive;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            margin-top: 3%;
+            justify-self: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+        .dropdownIcon {
+            width: 50px;
+            height: 28px;
+        }
+    }
+    
+    .hiddenNavbarMode {
+        display: none !important;
+    }
+    
+    .forText {
+        display: none;
+        background: black;
+        color: white;
+        font-family: 'Grandstander', cursive;
+        padding-top: 2px;
+        position: relative;
+    }
+    
+    #firstElement {
+        float: left;
+        margin-top: 0.4%;
+    }
+
+    .showDropdown {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdownAlign {
+        transform: translateX(3.5%);
+    }
+}
+
+@media (min-width: 1290px) {
+    button {
+        margin-top: 5px;
+    }
+
+    .iconMode {
+        font-size: 30px;
+    }
+
+    #smallerSizeForText, #smallerSizeForIcons {
+        display: none;
+    }
+
+    .hideTheH1 {
+        display: none;
+    }
+
+    nav ul a:focus {
+        color:#F7F41E;
+        border: 2px grey solid;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 880px) {
+    body {
+        background:url(../imgs/WorldMap2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    
+    article {
+        font-size: 0.8rem;
+    }
+
+    h1 {
+        display: inline;
+        font-size: 2rem;
+    }
+
+    article ul li, article ol li {
+        font-size: 1.1rem;
+    }
+
+    .dropdownAlign {
+        transform: translateX(5%);
+    }
+
+    .leftButtonText {
+        font-size: 8px;
+    }
+
+    .alignIcons {
+        margin-top: 7px;
+    }
+}
+
+@media (max-width: 576px) {   
+    article {
+        font-size: 0.6rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    article ul li, article ol li {
+        font-size: 0.8rem;
+    }
+
+    .dropdownAlign {
+        transform: translateX(10%);
+    }
+
+    .full-brightness {
+        width: 20px;
+        height: 10px;
+    }
+
+    .dropdownContent {
+        font-size: 15px;
+    }
+
+    #dropdownButton {
+        margin-top: 3%;
+    }
+}

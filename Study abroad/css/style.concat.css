@@ -1,0 +1,243 @@
+body {
+  background: url(../imgs/BackgroundWorldMap.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed; }
+  body::-webkit-scrollbar {
+    width: 0.5rem; }
+  body::-webkit-scrollbar-track {
+    background: black; }
+  body::-webkit-scrollbar-thumb {
+    background: #F7F41E; }
+
+h1 {
+  text-decoration: underline;
+  color: #F7F41E;
+  font-family: 'Grandstander', cursive;
+  display: inline; }
+
+.hiddenMode {
+  display: none; }
+
+.GiveTheSpace {
+  margin-top: 15px; }
+
+.centered {
+  text-align: center; }
+
+.hidden-content {
+  display: none;
+  height: 0%; }
+
+.adjustPic {
+  text-align: center; }
+
+#biggerSize, #smallerSizeForText, #smallerSizeForIcons {
+  display: inline; }
+
+a {
+  color: red; }
+
+article {
+  font-family: 'Roboto Mono', monospace;
+  color: white;
+  font-size: 1.2rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.6); }
+  article ul li {
+    color: #F7F41E;
+    font-size: 1.7rem; }
+  article ol li {
+    color: #F7F41E;
+    font-size: 1.7rem;
+    margin-left: 1%; }
+  article.menu-content {
+    position: absolute;
+    overflow-y: hidden; }
+
+@media (max-width: 1290px) {
+  article {
+    font-size: 1rem; }
+  article ul li, article ol li {
+    font-size: 1.4rem; }
+  .full-brightness {
+    width: 30px;
+    height: 15px; }
+  .navBlink {
+    font-size: 15px; }
+  .points {
+    font-size: 0.8rem; }
+  .iconMode {
+    font-size: 25px; }
+  .navBlink:hover {
+    font-size: 17px; } }
+
+@media (min-width: 1290px) {
+  button {
+    margin-top: 5px; }
+  .iconMode {
+    font-size: 30px; } }
+
+@media (max-width: 880px) {
+  body {
+    background: url(../imgs/WorldMap2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; }
+  article {
+    font-size: 0.8rem; }
+  h1 {
+    display: inline;
+    font-size: 2rem; }
+  article ul li, article ol li {
+    font-size: 1.1rem; }
+  .dropdownContent {
+    padding: 3px 0; }
+  .leftButtonText {
+    font-size: 8px; }
+  .hiddenNavbarMode {
+    display: none !important; }
+  .alignIcons {
+    margin-top: 7px; }
+  #biggerSize {
+    display: none; }
+  #smallerSizeForText, #smallerSizeForIcons {
+    display: inline; }
+  #dropdownButton {
+    font-family: 'Grandstander', cursive;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    width: 20px;
+    margin-left: 30%;
+    align-self: center;
+    justify-self: center; }
+  #hiddenContent {
+    display: none;
+    background: black;
+    color: white;
+    font-family: 'Grandstander', cursive;
+    padding-top: 10px;
+    position: relative;
+    transform: translateX(-5%); }
+  #firstElement {
+    float: left;
+    margin-top: 0.8%; }
+  #hiddenContent .dropdownContent:hover {
+    border: 2px solid grey; }
+  #dropdownButton:hover #hiddenContent {
+    display: flex;
+    flex-direction: column; } }
+
+@media (min-width: 880px) {
+  .hideTheH1 {
+    display: none; }
+  nav ul a:focus {
+    color: #F7F41E;
+    border: 2px grey solid;
+    text-decoration: none; }
+  #smallerSizeForText, #smallerSizeForIcons {
+    display: none; } }
+
+@media (max-width: 576px) {
+  article {
+    font-size: 0.6rem; }
+  h1 {
+    font-size: 1.5rem; }
+  article ul li, article ol li {
+    font-size: 0.8rem; }
+  .full-brightness {
+    width: 20px;
+    height: 10px; }
+  #dropdownButton {
+    margin-top: 1.5%; } }
+
+#navbar {
+  background-color: black;
+  min-height: 30px; }
+  #navbar ul {
+    margin-left: 5%;
+    margin-right: 5%;
+    list-style: none;
+    overflow: hidden; }
+    #navbar ul a:hover {
+      color: #F7F41E;
+      text-decoration: none; }
+    #navbar ul .points {
+      color: white; }
+    #navbar ul:not(#smallerSizeForText) {
+      text-align: center;
+      align-self: center;
+      justify-self: center; }
+    #navbar ul li {
+      display: inline; }
+      #navbar ul li a {
+        color: white;
+        font-family: 'Grandstander', cursive;
+        display: inline-grid;
+        white-space: nowrap; }
+        #navbar ul li a.active-chapter {
+          color: #F7F41E;
+          border: 2px grey solid;
+          text-decoration: none; }
+  #navbar .flags {
+    background-color: black;
+    border: 0;
+    padding: 0;
+    margin-right: 10px;
+    position: relative;
+    float: right; }
+  #navbar .text-icons {
+    background-color: black;
+    border: 0;
+    padding: 0;
+    margin-left: 10px;
+    position: relative;
+    float: left;
+    outline: 0; }
+    #navbar .text-icons:hover {
+      border: 2px solid grey; }
+    #navbar .text-icons:focus {
+      outline: none; }
+  #navbar .leftButtonText {
+    font-size: 12px;
+    color: white;
+    text-decoration: underline; }
+  #navbar .full-brightness {
+    width: 40px;
+    height: 20px; }
+  #navbar .navBlink {
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
+    justify-content: space-between; }
+    #navbar .navBlink:hover {
+      font-size: 22px; }
+    #navbar .navBlink:hover li {
+      position: fixed; }
+  #navbar button a:hover {
+    background-color: black; }
+
+.footer {
+  position: fixed;
+  bottom: 1%;
+  width: 100%;
+  right: 1%; }
+  .footer .copyright1 {
+    color: grey;
+    float: right;
+    font-size: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.8); }
+
+.BlackBG {
+  background: black; }
+  .BlackBG .HousePictures {
+    width: 45%;
+    height: 20%;
+    margin: 1%;
+    opacity: 0.7; }
+    .BlackBG .HousePictures:hover {
+      opacity: 1; }
