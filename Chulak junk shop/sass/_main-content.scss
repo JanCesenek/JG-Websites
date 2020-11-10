@@ -1,0 +1,570 @@
+.main-content {
+    grid-area: main;
+    position: relative;
+    // grid-row: main-start / main-end;
+    // grid-column: main-start / main-end;
+    background-image:   linear-gradient(170deg, 
+                            transparent 60%,
+                            rgba(#000, .99)),
+                        url(../imgs/goauldFleet.jpg);
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: repeat(5, minmax(10rem, 1fr));
+    grid-template-rows: 5rem repeat(9, 13rem);
+    column-gap: 1rem;
+    row-gap: 2rem;
+    padding: 5rem;
+    padding-top: 2rem;
+
+    @include respond(px1000) {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    @include respond(px760) {
+        grid-template-rows: 5rem repeat(11, 13rem);
+    }
+
+    @include respond(tiniest) {
+        grid-template-columns: repeat(5, 0.9fr);
+    }
+
+    &__bubble-wrap {
+        display: grid;
+        gap: 3rem;
+        grid-template-columns: repeat(auto-fill, 20rem);
+        grid-template-rows: repeat(auto-fill, 15rem);
+        grid-column: 1 / 5;
+        grid-row: 2 / -1;
+
+        @include respond(phone) {
+            grid-template-columns: repeat(2, 20rem);
+            grid-template-rows: repeat(auto-fill, 15rem);
+        }
+
+        @include respond(tiny) {
+            grid-template-columns: repeat(2, 15rem);
+            grid-template-rows: repeat(auto-fill, 11.25rem);
+        }
+    }
+
+    &__heading {
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+
+        @include respond(phone) {
+            justify-items: flex-start;
+        }
+
+        .heading-2 {
+            border-bottom: 5px solid $cl-goldD;
+            padding: 0 3px;
+            background-color: rgba(#000, .3);
+            box-shadow: $shadow1;
+            border-radius: 5px;
+        }
+    }
+
+    &__buyers {
+        grid-column: 5 / 6;
+        grid-row: 1 / 8;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        grid-template-rows: 2rem repeat(3, 1fr);
+        grid-template-columns: 100%;
+        row-gap: 2rem;
+
+        @include respond(px760) {
+            margin-left: -5rem;
+        }
+
+        @include respond(tiny) {
+            margin-left: -8rem;
+        }
+
+        @include respond(tiniest) {
+            margin-left: -10.5rem;
+            margin-right: 2.5rem;
+        }
+    }
+
+    &__buyer-heading {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+
+        .heading-3 {
+            border-bottom: 3px solid $cl-goldD;
+            background-color: rgba(#000, .3);
+            border-radius: 5px;
+        }
+    }
+
+    &__buyers-list {
+        @include centerGrid;
+        @include fullSize;
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 3rem;
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+
+        .heading-4 {
+            font-size: 2rem;
+            color: $cl-goldL;
+        }
+
+        &--1,
+        &--2,
+        &--3 {
+            @include centerGrid;
+            grid-template-rows: 10% 1fr 20%;
+            grid-template-columns: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 2rem 4rem $shadow1;
+            @include fullSize;
+
+            &:hover {
+                transform: translate(.3rem, -.3rem);
+                box-shadow: 0 4rem 8rem $shadow1;
+            }
+
+            .buyer-name {
+                @include fullSize;
+                grid-row: 1 / 2;
+                background-color: #000;
+                @include centerGrid;
+                border-bottom: 1px solid $cl-gold;
+            }
+
+            .buyer-image {
+                @include fullSize;
+                grid-row: 2 / 3;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                grid-template-rows: repeat(2, 1fr);
+                background-color: #000;
+            }
+
+            .buyer-money {
+                grid-row: 3 / 4;
+                padding-left: 1rem;
+                @include fullSize;
+                @include centerGrid;
+                justify-items: flex-start;
+                background-color: $cl-goldL;
+                font-size: 1rem;
+                color: #000;
+                font-family: 'Trispace', sans-serif;
+            }
+        }
+
+        &--1 {
+            grid-row: 1 / 2;
+
+            .buyer-image {
+                background-image: url(../imgs/apophis.jpg);
+            }
+        }
+
+        &--2 {
+            grid-row: 2 / 3;
+
+            .buyer-image {
+                background-image: url(../imgs/heruUr.jpg);
+            }
+        }
+
+        &--3 {
+            grid-row: 3 / 4;
+
+            .buyer-image {
+                background-image: url(../imgs/hathor.jpg);
+            }
+        }
+    }
+
+    &__center-text {
+        text-align: center;
+        @include fullSize;
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        background-color: $cl-goldL;
+        display: grid;
+        align-items: center;
+        border-bottom: 1px solid grey;
+    }
+
+    &__bubble {
+        background-color: $cl-blue;
+        border-radius: 5px;
+        box-shadow: 0 1rem 2rem $shadow1;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: 20% 1fr 30%;
+        justify-items: center;
+        align-items: center;
+        overflow: hidden;
+
+        &:hover {
+            transform: translate(.5rem, -.5rem);
+            box-shadow: 0 2rem 4rem $shadow1;
+        }
+
+        .heading-4 {
+            font-size: 1.5rem;
+            color: #000;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+
+    &__img {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        &--1 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/zatniktel.jpg);
+        }
+
+        &--2 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/karaKesh.jpg);
+        }
+
+        &--3 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/rodOfAnguish.png);
+        }
+
+        &--4 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/MaTokStaff.jpg);
+        }
+
+        &--5 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/communicationDevice.jpg);
+        }
+
+        &--6 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/healingDevice.jpg);
+        }
+
+        &--7 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/stasisJar.jpg);
+        }
+
+        &--8 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/symbionts.jpg);
+        }
+
+        &--9 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/sarcophagus.jpg);
+        }
+
+        &--10 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/zatarcRing.jpg);
+        }
+
+        &--11 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/TelTac.png);
+        }
+
+        &--12 {
+            background-image: linear-gradient(
+            to right bottom,
+            rgba($cl-goldL, .5),
+            rgba($cl-blue, .5)),
+            url(../imgs/AlKesh.png);
+        }
+    }
+
+    &__dropdown {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        font-size: 2rem;
+        color: #000;
+        font-weight: 800;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 50%;
+        background-color: rgba($cl-goldL, .5);
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        box-shadow: 0 .5rem 1rem rgba(#fff, .3);
+
+        &:hover {
+            cursor: pointer;
+            transform: translate(.1rem, -.2rem);
+            box-shadow: 0 .5rem 1rem rgba(#fff, .5);
+        }
+    }
+
+    &__wanted {
+        @include centerGrid;
+        @include fullSize;
+        width: 90%;
+        grid-column: 1 / 5;
+        grid-row: 6 / 8;
+        grid-template-columns: 40% 1fr;
+        grid-template-rows: 15% 1fr;
+        background-color: rgba(#000, .3);
+        border: 5px solid red;
+        border-radius: 1rem;
+        overflow: hidden;
+        color: $cl-gold;
+        box-shadow: 0 2rem 4rem red;
+
+        @include respond(px1400) {
+            grid-row: 7 / 9;
+        }
+
+        @include respond(px760) {
+            grid-row: 9 / 11;
+            height: 80%;
+            margin-top: 5rem;
+        }
+
+        @include respond(tiny) {
+            grid-row: 8 / 10;
+            @include fullSize;
+            margin-top: -.5rem;
+            margin-bottom: .5rem;
+        }
+
+        .beheading {
+            @include fullSize;
+            @include centerGrid;
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            border-bottom: 1px solid $cl-goldL;
+
+            .heading-2 {
+                margin-top: -.5rem;
+            }
+        }
+
+        .anubis-image {
+            @include fullSize;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            background-image: url(../imgs/anubis.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .reward {
+            @include fullSize;
+            @include centerGrid;
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            font-size: 1.7rem;
+            font-family: sans-serif;
+
+            @include respond(px1400) {
+                font-size: 1.5rem;
+            }
+
+            @include respond(px760) {
+                font-size: 1.3rem;
+            }
+
+            .paragraph {
+                padding: 1rem;
+                line-height: 1.4;
+            }
+        }
+    }
+
+    &__owner {
+        @include centerGrid;
+        background-color: rgba($cl-gold, .5);
+        width: 90%;
+        grid-column: 1 / 4;
+        grid-row: 8 / 11;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        grid-template-columns: 40% 1fr;
+        grid-template-rows: 15% 1fr;
+        box-shadow: 0 1rem 2rem black;
+
+        @include respond(px1400) {
+            grid-row: 9 / 11;
+            margin-top: 2rem;
+            margin-bottom: -4rem;
+        }
+
+        @include respond(px760) {
+            grid-row: 11 / 13;
+        }
+
+        @include respond(tiny) {
+            grid-row: 10 / 12;
+            width: 95%;
+        }
+
+        .owner-name {
+            @include fullSize;
+            grid-column: 1 / -1;
+            grid-row: 1 / 2;
+            text-align: center;
+            border-bottom: 1px solid black;
+
+            .heading-2 {
+                color: #000;
+            }
+        }
+
+        .owner-image {
+            @include fullSize;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            background-image: url(../imgs/tyjelk.jpg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .owner-intro {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            @include fullSize;
+
+            .paragraph {
+                font-size: 1.5rem;
+                padding: 1rem 2rem;
+                font-family: sans-serif;
+                line-height: 1.3;
+
+                @include respond(px1400) {
+                    font-size: 1.3rem;
+                }
+
+                @include respond(px760) {
+                    font-size: 1.2rem;
+                    line-height: 1.1;
+                }
+            }
+        }
+    }
+
+    &__rules {
+        @include centerGrid;
+        grid-column: 4 / 6;
+        grid-row: 8 / 11;
+        grid-template-rows: 15% 1fr;
+        row-gap: 1rem;
+        background-color: rgba($cl-gold, .5);
+        border-radius: 1rem;
+        overflow: hidden;
+        margin-top: 5rem;
+        margin-bottom: 10rem;
+        box-shadow: 0 1rem 2rem black;
+
+        @include respond(px1400) {
+            grid-row: 9 / 11;
+            margin-top: 2rem;
+            margin-bottom: -4rem;
+        }
+
+        @include respond(px760) {
+            grid-row: 11 / 13;
+        }
+
+        @include respond(tiny) {
+            grid-row: 10 / 12;
+        }
+
+        .rules-intro {
+            grid-row: 1 / 2;
+            padding: .8rem;
+            border-bottom: 1px solid black;
+
+            .heading-3 {
+                color: #000;
+            }
+        }
+
+        .rules-list {
+            grid-row: 2 / 3;
+            @include fullSize;
+            font-family: sans-serif;
+
+            ul {
+                list-style: none;
+
+                li {
+                    font-size: 1.5rem;
+                    padding: .5rem;
+
+                    @include respond(px760) {
+                        font-size: 1.3rem;
+                    }
+
+                    &::before {
+                        content:"";
+                        background-image: url(../imgs/apophisSymbol.png);
+                        background-size: 100% 100%;
+                        display: inline-block;
+                        width: 2rem;
+                        height: 1.3rem;
+                        margin-right: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}

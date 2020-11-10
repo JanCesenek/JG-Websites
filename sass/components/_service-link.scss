@@ -1,0 +1,148 @@
+.link-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 2rem;
+    width: 8rem;
+    height: 5rem;
+
+    &--L {
+        left: 2rem;
+    }
+
+    &--R {
+        right: 2rem;
+    }
+
+    .service-arrow {
+        color: $cl-white;
+        font-size: 3rem;
+        margin-left: 5px;
+        margin-top: 2px;
+        opacity: 0.5;
+
+        &--L {
+            transform: rotateY(180deg);
+            margin-left: 0;
+            margin-right: 5px;
+        }
+    }
+
+    .service-link {
+        width: 5rem;
+        height: 4.8rem;
+        border-radius: 50%;
+        background-image: url(../imgs/Stargate.png);
+        background-size: 100% 100%;
+        display: block;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &::before {
+            width: 0;
+            height: 0;
+            display: block;
+            @include absCenter;
+            content: "";
+            border-radius: 50%;
+            z-index: 2;
+            background-image: linear-gradient(to right, rgba($cl-infra, .02), rgba($cl-black, .05)),
+                              url(../imgs/Space.jpg);
+            background-size: cover;
+
+            animation: switch 10s ease infinite;
+
+            @include respond(tab-port) {
+                animation: none;
+            }
+        }
+
+        &--L {
+            &::before {
+                left: 5.76rem;
+            }
+        }
+
+        &--R {
+            &::before {
+                left: 2.23rem;
+            }
+        }
+    }
+}
+
+.spaceship-container {
+    @include absCenter;
+
+    @include respond(tab-port) {
+        display: none;
+    }
+
+    &--1 {
+        left: 10%;
+        width: 30rem;
+        height: 30rem;
+
+        &__img {
+            animation: goauld-wraith 3s ease;
+        }
+    }
+
+    &--2 {
+        left: 90%;
+        width: 40rem;
+        height: 20rem;
+
+        &__img {
+            animation: asgard 3s ease;
+        }
+    }
+
+    &__img {
+        @include fullSize;
+    }
+}
+
+.spaceship-container-2 {
+    @include absCenter;
+
+    &--1 {
+        width: 90rem;
+        height: 40rem;
+
+        &__img {
+            animation: atlantis 3s ease;
+        }
+    }
+
+    &--2,
+    &--3 {
+        width: 15rem;
+        height: 10rem;
+
+        &__img {
+            animation: goauld-wraith 3s ease;
+        }
+    }
+
+    &--2 {
+        top: 10%;
+        left: 15%;
+    }
+
+    &--3 {
+        top: 2%;
+        left: 70%;
+        transform: rotateY(180deg);
+    }
+
+    @include respond(tab-port) {
+        display: none;
+    }
+
+    &__img {
+        @include fullSize;
+    }
+}

@@ -1,0 +1,207 @@
+@keyframes fromLeft {
+    0% {
+        transform: translate(-80rem, -7.5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    50% {
+        transform: translate(-80rem, -7.5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    95% {
+        transform: translate(-20rem, -7.5rem);
+        opacity: 0.5;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    100% {
+        transform: translate(-30rem, -7.5rem);
+        opacity: 1;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+}
+
+@keyframes fromRight {
+    0% {
+        transform: translate(20rem, -7.5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    50% {
+        transform: translate(20rem, -7.5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    95% {
+        transform: translate(-40rem, -7.5rem);
+        opacity: 0.5;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    100% {
+        transform: translate(-30rem, -7.5rem);
+        opacity: 1;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+}
+
+@keyframes fromTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-10rem);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(5rem);
+    }
+
+    40% {
+        opacity: 0;
+        transform: translate(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes center {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    66% {
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    80% {
+        opacity: 0.2;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+}
+
+@keyframes fromLeft2 {
+    0% {
+        transform: translate(-70rem, -5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    50% {
+        transform: translate(-70rem, -5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    95% {
+        transform: translate(-10rem, -5rem);
+        opacity: 0.5;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    100% {
+        transform: translate(-20rem, -5rem);
+        opacity: 1;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+}
+
+@keyframes fromRight2 {
+    0% {
+        transform: translate(30rem, -5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    50% {
+        transform: translate(30rem, -5rem);
+        opacity: 0;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    95% {
+        transform: translate(-30rem, -5rem);
+        opacity: 0.5;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+
+    100% {
+        transform: translate(-20rem, -5rem);
+        opacity: 1;
+        filter: drop-shadow(1rem 2rem 4rem yellowgreen);
+    }
+}
+
+@keyframes switch {
+    0% {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+@keyframes goauld-wraith {
+    0% {
+        transform: translate(-40rem);
+        filter: drop-shadow(3rem 6rem 9rem rgba($cl-white, .5), 3rem 6rem 9rem rgba(steelblue, .3));
+    }
+
+    50% {
+        transform: translate(0);
+        filter: drop-shadow(2rem 4rem 8rem $cl-white, .1rem 4rem 8rem steelblue);
+    }
+
+    100% {
+        filter: none;
+    }
+}
+
+@keyframes asgard {
+    0% {
+        transform: translate(40rem);
+        filter: drop-shadow(3rem 6rem 9rem rgba($cl-white, .5), 3rem 6rem 9rem rgba(steelblue, .3));
+    }
+
+    50% {
+        transform: translate(0);
+        filter: drop-shadow(2rem 4rem 8rem $cl-white, .1rem 4rem 8rem steelblue);
+    }
+
+    100% {
+        filter: none;
+    }
+}
+
+@keyframes atlantis {
+    0% {
+        opacity: 0;
+        filter: drop-shadow(6rem 12rem 18rem rgba($cl-white, .5), 6rem 12rem 18rem rgba(steelblue, .3));
+    }
+
+    50% {
+        opacity: 0.5;
+        filter: drop-shadow(6rem 12rem 18rem rgba($cl-white, .5), 6rem 12rem 18rem rgba(steelblue, .3));
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(6rem 12rem 18rem rgba($cl-white, .5), 6rem 12rem 18rem rgba(steelblue, .3));
+    }
+}

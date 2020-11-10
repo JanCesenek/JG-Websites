@@ -1,0 +1,320 @@
+.popup {
+    position: fixed;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 4rem);
+    background-color: rgba(#000, .8);
+    @include centerGrid;
+    z-index: 1000;
+
+    &__content {
+        background-color: #000;
+        border-radius: 5px;
+        width: 70%;
+        height: 60%;
+        @include centerGrid;
+        grid-template-columns: repeat(2, 1fr) 10%;
+        grid-template-rows: 1fr 70% 1fr;
+        overflow: hidden;
+
+        @include respond(tab-port) {
+            width: 80%;
+        }
+
+        @include respond(px760) {
+            width: 90%;
+        }
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+        @include respond(tiny) {
+            height: 50%;
+        }
+    }
+
+    &__overview {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        @include fullSize;
+        @include centerGrid;
+        border-right: 1px solid $cl-goldD;
+    }
+
+    &__top-offer {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        @include fullSize;
+        @include centerGrid;
+    }
+
+    &__exit {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+        font-size: 4rem;
+        color: #000;
+        position: relative;
+        z-index: 10;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        color: $cl-gold;
+        font-size: 2rem;
+        grid-column: 1 / 2;
+        grid-row: 2 / 4;
+        @include centerGrid;
+        @include fullSize;
+        border-right: 1px solid $cl-goldD;
+
+        .paragraph {
+            padding: 3rem;
+            font-size: 1.5rem;
+
+            @include respond(px1000) {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    &__offer-content {
+        color: $cl-gold;
+        font-size: 2rem;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        @include centerGrid;
+        @include fullSize;
+        background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+        url(../imgs/randomGipsyMarket.jpg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        .paragraph {
+            padding: 3rem;
+            line-height: 1.6;
+            font-size: 1.7rem;
+
+            .bold {
+                font-weight: 800;
+            }
+        }
+    }
+
+    &__buttons {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        @include centerGrid;
+        @include fullSize;
+        justify-items: space-around;
+        grid-template-columns: repeat(2, 1fr);
+
+        .btn {
+            background-color: #000;
+            color: $cl-goldD;
+            border-radius: 1rem;
+            border: 1px solid $cl-gold;
+            padding: 1rem;
+            width: 70%;
+            font-size: 1.6rem;
+
+            &:hover {
+                background-color: $cl-goldD;
+                color: #000;
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &__coloring {
+        @include fullSize;
+        grid-column: 3 / 4;
+        grid-row: 1 / -1;
+        background-color: $cl-gold;
+    }
+
+    &--1 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/zatniktel2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--2 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/karaKesh2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--3 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/rodOfAnguish2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--4 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/MaTokStaff2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--5 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/communicationDevice2.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--6 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/healingDevice2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--7 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/stasisJar2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--8 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/symbionts2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--9 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/sarcophagus2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--10 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/zatarcRing2.jpg);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--11 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/TelTac2.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    &--12 {
+        .popup__text {
+            background-image: linear-gradient(to right, rgba(#000, .8), rgba(#000, .8)),
+                                url(../imgs/AlKesh2.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+
+
+
+.sidebar-popup {
+    position: fixed;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 4rem);
+    background: linear-gradient(to right,
+                        rgba($cl-gold, .95),
+                        rgba(#000, .95));
+    @include centerGrid;
+    z-index: 100;
+    grid-template-columns: 1fr 70% 1fr;
+    grid-template-rows: repeat(2, 1fr) 40% repeat(2, 1fr);
+
+    &__exit {
+        @include centerGrid;
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+        font-size: 5rem;
+        color: $cl-gold;
+
+        @include respond(phone) {
+            align-self: flex-start;
+            margin-top: 5rem;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__content {
+        @include centerGrid;
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+
+        ul {
+            list-style: none;
+
+            li {
+                font-size: 5rem;
+                border-radius: 1rem;
+
+                &:hover {
+                    background-image: linear-gradient(to right, rgba(#000, .2), rgba($cl-gold, .2));
+                    cursor: pointer;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: 2rem;
+                }
+
+                &::before {
+                    content:"";
+                    background-image: url(../imgs/apophisSymbol.png);
+                    background-size: 100% 100%;
+                    display: inline-block;
+                    width: 6rem;
+                    height: 4rem;
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}

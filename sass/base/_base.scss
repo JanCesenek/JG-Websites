@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(huge-screen) {
+        font-size: 75%;
+    }
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include respond(phone) {
+        font-size: 37.5%;
+    }
+}
+
+body {
+    background:url(../imgs/Space.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    color: $cl-white;
+
+    &::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: $cl-black;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $cl-white;
+    }
+}

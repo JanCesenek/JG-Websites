@@ -1,0 +1,55 @@
+// COLORS
+$cl-gold: #E19E2A;
+$cl-goldL: #F2BE16;
+$cl-goldD: #D8B33E;
+$cl-blue: #3713B7;
+
+// SHADOWS
+$shadow1: rgba(#000, .5);
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(big-desktop) {
+        font-size: 75%;
+    }
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include respond(phone) {
+        font-size: 37.5%;
+    }
+}
+
+body {
+    background-color: #000;
+    position: relative;
+    font-family: sans-serif;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+        border-radius: 1rem;
+    }
+    
+    &::-webkit-scrollbar-track {
+        background: #000;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background: $cl-gold;
+    }
+}

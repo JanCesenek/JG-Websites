@@ -1,0 +1,24 @@
+.sidebar {
+    // grid-row: 1 / -1;
+    // grid-column: sidebar-start / sidebar-end;
+    grid-area: side;
+    background-color: #000;
+    grid-auto-flow: column;
+    justify-items: center;
+    align-items: flex-start;
+
+    @include respond(px1000) {
+        grid-auto-flow: row;
+        justify-items: center;
+        align-items: center;
+    }
+
+    &__dropdown {
+        font-size: 6rem;
+        color: $cl-gold;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
