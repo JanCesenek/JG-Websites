@@ -19,3 +19,20 @@ html {
   @media (max-width: 600px) {
     html {
       font-size: 37.5%; } }
+
+.header {
+  display: flex;
+  background-color: #001CFF;
+  justify-content: center;
+  border-radius: 1rem; }
+  .header__heading {
+    color: #fff; }
+
+.navbar {
+  background-color: #007EFF; }
+
+.main-content {
+  background-color: #00C2FF; }
+
+.heading-1 {
+  font-size: 8rem; }

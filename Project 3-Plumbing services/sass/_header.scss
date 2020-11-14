@@ -1,0 +1,10 @@
+.header {
+    display: flex;
+    background-color: $cl-blueD;
+    justify-content: center;
+    border-radius: 1rem;
+
+    &__heading {
+        color: #fff;
+    }
+}
