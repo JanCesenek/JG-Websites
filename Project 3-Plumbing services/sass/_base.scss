@@ -1,6 +1,7 @@
 $cl-blueL: #00C2FF;
 $cl-blue: #007EFF;
 $cl-blueD: #001CFF;
+$cl-greyblue: #7E82A7;
 
 
 
@@ -37,4 +38,15 @@ html {
     }
 }
 
+body {
+    background-color: #000;
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+        border-radius: 1rem;
+        margin: 0 10%;
+    }
+}
 

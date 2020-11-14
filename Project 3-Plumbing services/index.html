@@ -4,23 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plumbing&Heating Friedel</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono&family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
     <header class="header">
-        <h1 class="header__heading heading-1">Plumbing&Heating Friedel</h1>
+        <h1 class="header__heading heading-1">Plumbing&Heating K.Smith</h1>
+        <img src="imgs/plumbingLogo.png" alt="Plumbing Logo" class="header__logo">
     </header>
 
-    <nav class="navbar">
-
+    <nav class="nav">
+        <li class="nav__item"><a href="#home" class="nav__link focused" onclick="ShowTextFor('home')">Home</a></li>
+        <li class="nav__item"><a href="#pricing" class="nav__link" onclick="ShowTextFor('pricing')">Pricing</a></li>
+        <li class="nav__item"><a href="#listofservices" class="nav__link" onclick="ShowTextFor('listofservices')">List of services</a></li>
+        <li class="nav__item"><a href="#appointments" class="nav__link" onclick="ShowTextFor('appointments')">Appointments</a></li>
+        <li class="nav__item"><a href="#contact" class="nav__link" onclick="ShowTextFor('contact')">Contact</a></li>
     </nav>
 
     <main class="main-content">
-
+        <article id="home" class="main-content__chapter">
+            <div class="align">
+                Welcome to my website. I am a humble, 40-years-old self-employed plumber from Colchester and I offer my services to anyone from Essex.
+                <br>
+                I have 15 years of practice. I have hundreds of happy customers all around the county.
+                <br>
+                Why is that? I have affordable prices, I get my work done on time and I fulfill my promises.
+                <br>
+                <span class="bold">Office hours: Mon-Fri 9AM-5PM</span>
+            </div>
+        </article>
+        <article id="pricing" class="main-content__chapter hidden">
+            <div class="align">
+                <div class="center"><h2 class="heading-2">Prices <i class="fas fa-pound-sign"></i></h2></div>
+                <br>
+                <ol>
+                    <li>Gas services</li>
+                    <ul>
+                        <li>First gas: 50 <i class="fas fa-pound-sign"></i></li>
+                        <li>Second gas: 45 <i class="fas fa-pound-sign"></i></li>
+                        <li>Third gas: 40 <i class="fas fa-pound-sign"></i></li>
+                        <li>Fourth gas: 65 <i class="fas fa-pound-sign"></i></li>
+                        <li>Fifth gas: 80 <i class="fas fa-pound-sign"></i></li>
+                    </ul>
+                    <br>
+                    <li>Heating</li>
+                    <ul>
+                        <li>First heating: 55 <i class="fas fa-pound-sign"></i></li>
+                        <li>Second heating: 30 <i class="fas fa-pound-sign"></i></li>
+                        <li>Third heating: 60 <i class="fas fa-pound-sign"></i></li>
+                    </ul>
+                </ol>
+            </div>
+        </article>
+        <article id="listofservices" class="main-content__chapter hidden">
+            <div class="align">
+                3
+            </div>
+        </article>
+        <article id="appointments" class="main-content__chapter hidden">
+            <div class="align">
+                4
+            </div>
+        </article>
+        <article id="contact" class="main-content__chapter hidden">
+            <div class="align">
+                5
+            </div>
+        </article>
+        <div class="reviews">
+            <h2 class="heading-2">Reviews from plumberlist.io</h2>
+            <h3 class="heading-3">142 reviews, average rating of 4.7</h3>
+            <div class="reviews__user">
+                <div class="reviews__user--name"><h4 class="heading-4">jacekdrozdowski</h4></div>
+                <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h5></div>
+                <div class="reviews__user--details">
+                    <img src="imgs/user1.jpg" class="reviews__user--details__photo">
+                    <div class="reviews__user--details__text"><h6 class="heading-6">"Couldn't be happier. K.Smith is the real champ!"</h6></div>
+                </div>                    
+            </div>
+            <div class="reviews__user">
+                <div class="reviews__user--name"><h4 class="heading-4">peterhoffmann</h4></div>
+                <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></h5></div>
+                <div class="reviews__user--details">
+                    <img src="imgs/user2.png" class="reviews__user--details__photo">
+                    <div class="reviews__user--details__text"><h6 class="heading-6">"Very decent service, would definitely recommend again!"</h6></div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
-
+        <div class="footer__content">
+            &copy; | Johnny Garlic | 2020 | All rights reserved
+        </div>
     </footer>
+
+    <script rel="stylesheet" type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
