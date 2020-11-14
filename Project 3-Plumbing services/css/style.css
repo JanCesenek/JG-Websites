@@ -47,7 +47,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 1rem; }
+  padding: 1rem;
+  margin: .5rem 10%; }
   .nav__item {
     list-style: none; }
   .nav__link {
