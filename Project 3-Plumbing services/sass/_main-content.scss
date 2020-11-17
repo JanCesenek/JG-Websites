@@ -3,6 +3,10 @@
     min-height: 50rem;
     display: flex;
 
+    @include respond(tab-port) {
+        flex-direction: column;
+    }
+
     &__chapter {
         font-size: 2rem;
         color: #fff;
@@ -12,8 +16,22 @@
         height: 100%;
         display: flex;
 
+        @include respond(tab-port) {
+            width: 100%;
+        }
+
         .align {
             @include fullSize;
+
+            @include respond(tab-port) {
+                ol {
+                    text-align: center;
+
+                    & > li {
+                        font-weight: 800;
+                    }
+                }
+            }
         }
 
         .center {
@@ -35,10 +53,43 @@
         align-items: center;
         justify-content: space-between;
 
+        @include respond(tab-port) {
+            width: 100%;
+            justify-content: space-evenly;
+        }
+
+        .headings {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .heading-2 {
+            color: $cl-blueD;
+        }
+
+        .heading-3 {
+            color: $cl-blueL;
+        }
+
+        &__user-container {
+            @include respond(tab-port) {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            @include respond(phone) {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
         &__user {
             background-image: linear-gradient(to right, $cl-blueD, $cl-blueL);
-            width: 35rem;
-            min-height: 20rem;
+            min-height: max-content;
+            min-width: min-content;
             margin-top: 5rem;
             border-radius: .5rem;
             overflow: hidden;
@@ -46,6 +97,14 @@
             flex-direction: column;
             align-items: center;
             color: #fff;
+
+            @include respond(tab-port) {
+                width: 30rem;
+            }
+
+            @include respond(phone) {
+                width: 40rem;
+            }
 
             &--details {
                 display: flex;
@@ -70,6 +129,54 @@
                     .heading-6 {
                         padding: 0 1rem;
                     }
+                }
+            }
+        }
+    }
+
+    &__form {
+        font-size: 4rem;
+        border-radius: 1rem;
+        border: 1px solid #fff;
+        padding: 1rem;
+
+        .name,
+        .phone,
+        .email,
+        .date,
+        .hour {
+            display: flex;
+            align-items: center;
+            justify-content: space-betwee;
+
+            input {
+                width: 30rem;
+                height: 5rem;
+                font-size: 3rem;
+                color: $cl-blue;
+                border-radius: .5rem;
+                overflow: hidden;
+                border: 1px solid #fff;
+            }
+        }
+
+        .submit {
+            text-align: center;
+
+            .btn-submit {
+                font-size: 2rem;
+                color: $cl-blue;
+                background-color: #fff;
+                border-radius: .5rem;
+                overflow: hidden;
+                font-family: inherit;
+                outline: none;
+                border: 1px solid #fff;
+                padding: .5rem;
+
+                &:hover {
+                    color: #fff;
+                    background-color: $cl-blue;
                 }
             }
         }

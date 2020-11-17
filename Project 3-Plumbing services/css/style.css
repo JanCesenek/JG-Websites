@@ -28,6 +28,13 @@ body {
   body > * {
     border-radius: 1rem;
     margin: 0 10%; }
+    @media (max-width: 1200px) {
+      body > * {
+        margin: 0 5%; } }
+    @media (max-width: 900px) {
+      body > * {
+        margin: 0;
+        border-radius: 0; } }
 
 .header {
   display: flex;
@@ -39,19 +46,21 @@ body {
     color: #fff;
     padding: 0 2rem; }
   .header__logo {
-    width: 8rem;
-    height: 8rem; }
+    width: 6rem;
+    height: 6rem; }
 
 .nav {
   background-color: #007EFF;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
   padding: 1rem;
-  margin: .5rem 10%; }
-  .nav__item {
+  margin-top: .5rem;
+  margin-bottom: .5rem; }
+  .nav > * {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; }
+  .nav__item, .nav__item2 {
     list-style: none; }
-  .nav__link {
+  .nav__link, .nav__link2 {
     font-size: 3rem;
     text-decoration: none;
     color: #fff;
@@ -59,8 +68,38 @@ body {
     font-family: 'Rubik', sans-serif;
     border-radius: .5rem;
     overflow: hidden; }
-    .nav__link:hover {
+    .nav__link:hover, .nav__link2:hover {
       border: 1px solid #fff; }
+  .nav__link2 {
+    font-size: 2rem; }
+  @media (max-width: 900px) {
+    .nav .biggerSize {
+      display: none; } }
+  .nav .smallerSize {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-start; }
+    @media (max-width: 900px) {
+      .nav .smallerSize {
+        display: flex; } }
+    .nav .smallerSize .whole-dropdown {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .nav .smallerSize .whole-dropdown .dropdown-button {
+        color: #fff;
+        font-size: 3rem;
+        margin-right: 20rem; }
+        .nav .smallerSize .whole-dropdown .dropdown-button:hover {
+          cursor: pointer; }
+      .nav .smallerSize .whole-dropdown .hidden-dropdown {
+        list-style: none;
+        transform: translateX(-5rem); }
+        .nav .smallerSize .whole-dropdown .hidden-dropdown .nav__item2:first-of-type {
+          margin-top: 1rem; }
+        .nav .smallerSize .whole-dropdown .hidden-dropdown > * {
+          padding: 1rem 0; }
 
 .focused {
   background-color: #fff;
@@ -70,6 +109,9 @@ body {
   background-image: linear-gradient(to bottom, #001CFF, #00C2FF);
   min-height: 50rem;
   display: flex; }
+  @media (max-width: 900px) {
+    .main-content {
+      flex-direction: column; } }
   .main-content__chapter {
     font-size: 2rem;
     color: #fff;
@@ -78,9 +120,17 @@ body {
     width: 70%;
     height: 100%;
     display: flex; }
+    @media (max-width: 900px) {
+      .main-content__chapter {
+        width: 100%; } }
     .main-content__chapter .align {
       width: 100%;
       height: 100%; }
+      @media (max-width: 900px) {
+        .main-content__chapter .align ol {
+          text-align: center; }
+          .main-content__chapter .align ol > li {
+            font-weight: 800; } }
     .main-content__chapter .center {
       text-align: center;
       width: 100%; }
@@ -96,10 +146,32 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between; }
+    @media (max-width: 900px) {
+      .main-content .reviews {
+        width: 100%;
+        justify-content: space-evenly; } }
+    .main-content .reviews .headings {
+      display: flex;
+      flex-direction: column; }
+    .main-content .reviews .heading-2 {
+      color: #001CFF; }
+    .main-content .reviews .heading-3 {
+      color: #00C2FF; }
+    @media (max-width: 900px) {
+      .main-content .reviews__user-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around; } }
+    @media (max-width: 600px) {
+      .main-content .reviews__user-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; } }
     .main-content .reviews__user {
       background-image: linear-gradient(to right, #001CFF, #00C2FF);
-      width: 35rem;
-      min-height: 20rem;
+      min-height: max-content;
+      min-width: min-content;
       margin-top: 5rem;
       border-radius: .5rem;
       overflow: hidden;
@@ -107,6 +179,12 @@ body {
       flex-direction: column;
       align-items: center;
       color: #fff; }
+      @media (max-width: 900px) {
+        .main-content .reviews__user {
+          width: 30rem; } }
+      @media (max-width: 600px) {
+        .main-content .reviews__user {
+          width: 40rem; } }
       .main-content .reviews__user--details {
         display: flex;
         margin-top: auto;
@@ -125,6 +203,46 @@ body {
           align-items: center; }
           .main-content .reviews__user--details__text .heading-6 {
             padding: 0 1rem; }
+  .main-content__form {
+    font-size: 4rem;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    padding: 1rem; }
+    .main-content__form .name,
+    .main-content__form .phone,
+    .main-content__form .email,
+    .main-content__form .date,
+    .main-content__form .hour {
+      display: flex;
+      align-items: center;
+      justify-content: space-betwee; }
+      .main-content__form .name input,
+      .main-content__form .phone input,
+      .main-content__form .email input,
+      .main-content__form .date input,
+      .main-content__form .hour input {
+        width: 30rem;
+        height: 5rem;
+        font-size: 3rem;
+        color: #007EFF;
+        border-radius: .5rem;
+        overflow: hidden;
+        border: 1px solid #fff; }
+    .main-content__form .submit {
+      text-align: center; }
+      .main-content__form .submit .btn-submit {
+        font-size: 2rem;
+        color: #007EFF;
+        background-color: #fff;
+        border-radius: .5rem;
+        overflow: hidden;
+        font-family: inherit;
+        outline: none;
+        border: 1px solid #fff;
+        padding: .5rem; }
+        .main-content__form .submit .btn-submit:hover {
+          color: #fff;
+          background-color: #007EFF; }
 
 .hidden {
   display: none !important; }
@@ -136,8 +254,14 @@ body {
   padding: 1rem 0; }
 
 .heading-1 {
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: 'Lato', sans-serif; }
+  @media (max-width: 900px) {
+    .heading-1 {
+      font-size: 5rem; } }
+  @media (max-width: 600px) {
+    .heading-1 {
+      font-size: 4rem; } }
 
 .heading-2 {
   font-size: 2rem; }

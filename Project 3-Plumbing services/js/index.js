@@ -21,3 +21,11 @@ function ShowTextFor(selectedMenuOption) {
     }
   }
 }
+
+$(".dropdown-button").click(function() {
+  $(".hidden-dropdown").toggleClass("hidden");
+});
+
+$(".nav__link2").click(function() {
+  $(".hidden-dropdown").addClass("hidden");
+});

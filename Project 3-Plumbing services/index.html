@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plumbing&Heating Friedel</title>
+    <title>Plumbing&Heating K.Smith</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto+Mono&family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="header">
@@ -16,11 +17,25 @@
     </header>
 
     <nav class="nav">
-        <li class="nav__item"><a href="#home" class="nav__link focused" onclick="ShowTextFor('home')">Home</a></li>
-        <li class="nav__item"><a href="#pricing" class="nav__link" onclick="ShowTextFor('pricing')">Pricing</a></li>
-        <li class="nav__item"><a href="#listofservices" class="nav__link" onclick="ShowTextFor('listofservices')">List of services</a></li>
-        <li class="nav__item"><a href="#appointments" class="nav__link" onclick="ShowTextFor('appointments')">Appointments</a></li>
-        <li class="nav__item"><a href="#contact" class="nav__link" onclick="ShowTextFor('contact')">Contact</a></li>
+        <span class="biggerSize">
+            <li class="nav__item"><a href="#home" class="nav__link focused" onclick="ShowTextFor('home')">Home</a></li>
+            <li class="nav__item"><a href="#pricing" class="nav__link" onclick="ShowTextFor('pricing')">Pricing</a></li>
+            <li class="nav__item"><a href="#listofservices" class="nav__link" onclick="ShowTextFor('listofservices')">List of services</a></li>
+            <li class="nav__item"><a href="#appointments" class="nav__link" onclick="ShowTextFor('appointments')">Appointments</a></li>
+            <li class="nav__item"><a href="#contact" class="nav__link" onclick="ShowTextFor('contact')">Contact</a></li>
+        </span>
+        <span class="smallerSize">
+            <li class="nav__item"><a href="#home" class="nav__link focused" onclick="ShowTextFor('home')">Home</a></li>
+
+            <li class="whole-dropdown"><span class="dropdown-button">&#9776;</span>
+                <ul class="hidden-dropdown hidden">
+                    <li class="nav__item2"><a href="#pricing" class="nav__link2" onclick="ShowTextFor('pricing')">Pricing</a></li>
+                    <li class="nav__item2"><a href="#listofservices" class="nav__link2" onclick="ShowTextFor('listofservices')">List of services</a></li>
+                    <li class="nav__item2"><a href="#appointments" class="nav__link2" onclick="ShowTextFor('appointments')">Appointments</a></li>
+                    <li class="nav__item2"><a href="#contact" class="nav__link2" onclick="ShowTextFor('contact')">Contact</a></li>
+                </ul>
+            </li>
+        </span>
     </nav>
 
     <main class="main-content">
@@ -82,7 +97,31 @@
         </article>
         <article id="appointments" class="main-content__chapter hidden">
             <div class="align">
-                4
+                <form action="" method="GET" class="main-content__form">
+                    <div class="name">
+                        <label for="name"> Name:</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="phone">
+                        <label for="phone"> Phone:</label>
+                        <input type="tel" id="phone" name="phone" placeholder="12345 678901" minlength="11" maxlength="12" required>
+                    </div>
+                    <div class="email">
+                        <label for="email"> Email:</label>
+                        <input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+                    </div>
+                    <div class="date">
+                        <label for="date"> Date:</label>
+                        <input type="date" id="date" name="date" placeholder="" required>
+                    </div>
+                    <div class="hour">
+                        <label for="hour"> Time:</label>
+                        <input type="time" id="hour" name="hour" placeholder="" required>
+                    </div>
+                    <div class="submit">
+                        <button class="btn-submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </article>
         <article id="contact" class="main-content__chapter hidden">
@@ -95,22 +134,26 @@
             </div>
         </article>
         <div class="reviews">
-            <h2 class="heading-2">Reviews from plumberlist.io</h2>
-            <h3 class="heading-3">142 reviews, average rating of 4.7</h3>
-            <div class="reviews__user">
-                <div class="reviews__user--name"><h4 class="heading-4">jacekdrozdowski</h4></div>
-                <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h5></div>
-                <div class="reviews__user--details">
-                    <img src="imgs/user1.jpg" class="reviews__user--details__photo">
-                    <div class="reviews__user--details__text"><h6 class="heading-6">"Couldn't be happier. K.Smith is the real champ!"</h6></div>
-                </div>                    
+            <div class="headings">
+                <h2 class="heading-2">Reviews from plumberlist.io</h2>
+                <h3 class="heading-3">142 reviews, average rating of 4.7</h3>
             </div>
-            <div class="reviews__user">
-                <div class="reviews__user--name"><h4 class="heading-4">peterhoffmann</h4></div>
-                <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></h5></div>
-                <div class="reviews__user--details">
-                    <img src="imgs/user2.png" class="reviews__user--details__photo">
-                    <div class="reviews__user--details__text"><h6 class="heading-6">"Very decent service, would definitely recommend again!"</h6></div>
+            <div class="reviews__user-container">
+                <div class="reviews__user">
+                    <div class="reviews__user--name"><h4 class="heading-4">jacekdrozdowski</h4></div>
+                    <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h5></div>
+                    <div class="reviews__user--details">
+                        <img src="imgs/user1.jpg" class="reviews__user--details__photo">
+                        <div class="reviews__user--details__text"><h6 class="heading-6">"Couldn't be happier. K.Smith is the real champ!"</h6></div>
+                    </div>                    
+                </div>
+                <div class="reviews__user">
+                    <div class="reviews__user--name"><h4 class="heading-4">peterhoffmann</h4></div>
+                    <div class="reviews__user--stars"><h5 class="heading-5"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half"></i></h5></div>
+                    <div class="reviews__user--details">
+                        <img src="imgs/user2.png" class="reviews__user--details__photo">
+                        <div class="reviews__user--details__text"><h6 class="heading-6">"Very decent service, would definitely recommend again!"</h6></div>
+                    </div>
                 </div>
             </div>
         </div>

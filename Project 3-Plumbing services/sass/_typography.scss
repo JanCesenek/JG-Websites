@@ -1,6 +1,14 @@
 .heading-1 {
-    font-size: 8rem;
+    font-size: 6rem;
     font-family: 'Lato', sans-serif;
+
+    @include respond(tab-port) {
+        font-size: 5rem;
+    }
+
+    @include respond(phone) {
+        font-size: 4rem;
+    }
 }
 
 .heading-2 {

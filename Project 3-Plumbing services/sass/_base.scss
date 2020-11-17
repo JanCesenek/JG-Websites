@@ -47,6 +47,15 @@ body {
     & > * {
         border-radius: 1rem;
         margin: 0 10%;
+
+        @include respond(tab-land) {
+            margin: 0 5%;
+        }
+
+        @include respond(tab-port) {
+            margin: 0;
+            border-radius: 0;
+        }
     }
 }
 
