@@ -1,12 +1,13 @@
 .header {
+    background: url(../imgs/headerbackground.jpg);
+    background-size: contain;
     display: flex;
-    background-image: linear-gradient(to top, $cl-blueL, $cl-blueD);
     justify-content: center;
     align-items: baseline;
     padding: 2rem;
 
     &__heading {
-        color: #fff;
+        color: $cl-blueD;
         padding: 0 2rem;
     }
 
