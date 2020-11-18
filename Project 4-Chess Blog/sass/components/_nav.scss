@@ -1,0 +1,25 @@
+.nav {
+    background-color: $cl-blue;
+    color: $cl-orange;
+    font-size: 3rem;
+
+    & > * {
+        display: flex;
+    }
+
+    &__big-size {
+        justify-content: space-around;
+    }
+
+    &__small-size {
+        justify-content: space-between;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+}

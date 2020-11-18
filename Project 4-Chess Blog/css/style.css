@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+  @media (min-width: 1800px) {
+    html {
+      font-size: 75%; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 600px) {
+    html {
+      font-size: 37.5%; } }
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  background: url(../imgs/magnus.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  body > * {
+    margin: 0 10%;
+    border-radius: 1rem;
+    overflow: hidden; }
+
+.heading-1 {
+  font-size: 6rem;
+  font-family: 'Modak', cursive;
+  font-weight: 100;
+  text-shadow: 1rem 1rem 2rem black; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  background-color: blue; }
+  .header .heading-1 {
+    color: #DE7511; }
+
+.nav {
+  background-color: #0082FF;
+  color: #FF7D00;
+  font-size: 3rem; }
+  .nav > * {
+    display: flex; }
+  .nav__big-size {
+    justify-content: space-around; }
+  .nav__small-size {
+    justify-content: space-between; }
+  .nav__item {
+    list-style: none; }
+  .nav__link {
+    text-decoration: none; }
