@@ -37,10 +37,9 @@ html {
 
 body {
     font-family: 'Roboto Condensed', sans-serif;
-    background: url(../imgs/magnus.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: url(../imgs/chessboard.jpg);
+    background-size: contain;
+    min-height: 100vh;
 
     & > * {
         margin: 0 10%;

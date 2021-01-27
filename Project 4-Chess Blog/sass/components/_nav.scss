@@ -1,6 +1,5 @@
 .nav {
     background-color: $cl-blue;
-    color: $cl-orange;
     font-size: 3rem;
 
     & > * {
@@ -21,5 +20,19 @@
 
     &__link {
         text-decoration: none;
+        color: $cl-orange;
+
+        &:focus {
+            outline: none;
+        }
     }
+
+    &__dropdown {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.hidden {
+    display: none !important;
 }

@@ -22,10 +22,9 @@ html {
 
 body {
   font-family: 'Roboto Condensed', sans-serif;
-  background: url(../imgs/magnus.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center; }
+  background-image: url(../imgs/chessboard.jpg);
+  background-size: contain;
+  min-height: 100vh; }
   body > * {
     margin: 0 10%;
     border-radius: 1rem;
@@ -46,7 +45,6 @@ body {
 
 .nav {
   background-color: #0082FF;
-  color: #FF7D00;
   font-size: 3rem; }
   .nav > * {
     display: flex; }
@@ -57,4 +55,13 @@ body {
   .nav__item {
     list-style: none; }
   .nav__link {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #FF7D00; }
+    .nav__link:focus {
+      outline: none; }
+  .nav__dropdown {
+    display: flex;
+    flex-direction: column; }
+
+.hidden {
+  display: none !important; }
