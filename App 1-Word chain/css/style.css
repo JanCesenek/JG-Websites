@@ -45,8 +45,8 @@ body {
     right: 0;
 }
 
-.arrow1:hover,
-.arrow2:hover {
+.arrow-1:hover,
+.arrow-2:hover {
     cursor: pointer;
 }
 
@@ -93,6 +93,11 @@ body {
 
 .hidden {
     display: none;
+}
+
+input {
+    font-size: 2rem;
+    font-family: inherit;
 }
 
 
