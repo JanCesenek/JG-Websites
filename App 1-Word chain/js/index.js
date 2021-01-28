@@ -22,7 +22,7 @@ const updateValue = function(value) {
     if (value.key === 'Enter') {
         // If the active player is player1, check if the first letter of the word in input field matches the last letter of the last word in player2 used words array and vice versa
         // AND if the word doesn't match any of the words in either array
-        if (activePlayer === 0 ? wordCon2.charAt(wordCon2.length - 1) === value.charAt(0): wordCon1.charAt(wordCon1.length - 1) === value.charAt(0) && (!listofWords1.contains(value) && !listofWords2.contains(value))) {
+        if ((!listofWords1.contains(value) && !listofWords2.contains(value)) && activePlayer === 0 ? wordCon2.charAt(wordCon2.length - 1) === value.charAt(0): wordCon1.charAt(wordCon1.length - 1) === value.charAt(0)) {
             // If the active player is player1
             if (player1.classList.contains('active-player')) {
                 // Adds the word in input field to the player1-used words array
