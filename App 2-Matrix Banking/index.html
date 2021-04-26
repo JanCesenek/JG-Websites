@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrix Banking</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- what you see after loading the page -->
+    <header class="default-site">
+      <div class="display-usernames-container hidden">
+        <h2 class="heading-2">List of victims trapped in Matrix:</h2>
+        <div class="display-usernames"></div>
+      </div>
+      <div class="heading-container">
+        <h1 class="heading-1">
+          Welcome to Matrix Banking: Number of victims trapped in Matrix &rarr;
+          <span class="victims"></span>
+        </h1>
+        <div class="login">
+          <input type="text" class="username" placeholder="Username" />
+          <input type="password" class="password" placeholder="Password" />
+          <button class="btn login-btn">Log in</button>
+        </div>
+      </div>
+      <div class="new-account">
+        <h2 class="heading-2">
+          If you don't have an account yet, click on this button &rarr;
+        </h2>
+        <button class="btn sign-up-btn">Sign up</button>
+      </div>
+    </header>
+    <!-- what you see after logging in - yet to be generated in JS -->
+    <main class="after-login hidden">
+      <button class="btn logout-btn">Log out</button>
+      <div class="current-balance">
+        <h2 class="heading-2">
+          Your current balance: $<span class="balance">500</span>
+        </h2>
+      </div>
+      <div class="movements-display"></div>
+
+      <!-- only visible if the user owes Matrix -->
+      <div class="ower hidden">
+        <h2 class="heading-2">
+          YOU OWE US! 🪓 The clock is ticking and if you don't pay back, we're
+          coming for you in: <span class="ower-time"></span>
+        </h2>
+      </div>
+
+      <!-- field for sending money to a different account -->
+      <div class="send-money">
+        <h2 class="heading-2">Send money to:</h2>
+        <div class="send-money-container">
+          <input
+            type="text"
+            class="send-money-username"
+            placeholder="Username"
+          />
+          <input type="text" class="send-money-amount" placeholder="Amount" />
+          <button class="btn send-money-btn">Send</button>
+        </div>
+      </div>
+      <!-- field for requesting a loan from the bank -->
+      <div class="loan">
+        <h2 class="heading-2">Request a loan</h2>
+        <div class="loan-container">
+          <input type="password" class="loan-password" placeholder="Password" />
+          <input
+            type="text"
+            class="loan-amount"
+            placeholder="Amount requested"
+          />
+          <button class="btn loan-btn">Request</button>
+        </div>
+      </div>
+      <!-- field for deleting an account -->
+      <div class="delete-account">
+        <h2 class="heading-2">Delete account</h2>
+        <div class="delete-account-container">
+          <input
+            type="text"
+            class="delete-account-username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            class="delete-account-password"
+            placeholder="Password"
+          />
+          <button class="btn delete-account-btn">Delete</button>
+        </div>
+      </div>
+    </main>
+    <!-- clock in the bottom right corner displaying current time -->
+    <section class="clock-container">
+      <div class="clock"></div>
+    </section>
+    <!-- what happens after a user takes a loan and doesn't pay back in time -->
+    <section class="user-died hidden">
+      <div class="user-died-container">
+        <h1 class="heading-1">
+          YOU HAVE NOT PAID YOUR DEBTS IN TIME, THEREFORE HAD TO BE REMOVED FROM
+          MATRIX!
+        </h1>
+      </div>
+    </section>
+  </body>
+</html>
