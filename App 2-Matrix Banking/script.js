@@ -84,33 +84,18 @@ const userDataAll = [
     ["owes", false],
   ]),
 ];
+// displaying number of accounts trapped in Matrix
+const victims = document.querySelector(".victims");
+victims.textContent = userDataAll.length;
 
-// displaying username - separate issue
+// displaying a list of accounts trapped in Matrix
 const displayUsernames = document.querySelector(".display-usernames");
 const displayUsernamesContainer = document.querySelector(
   ".display-usernames-container"
 );
-
-const displayUsernamesFunction = function () {
-  displayUsernames.innerHTML = "";
-  if (userDataAll.length === 0)
-    displayUsernamesContainer.classList.add("hidden");
-  else displayUsernamesContainer.classList.remove("hidden");
-  userDataAll.forEach(function (map) {
-    const firstName = map.get("firstName");
-    const lastName = map.get("lastName");
-    const username = map.get("userName");
-    const displayUsernamesHTML = `
-    <h2 class="heading-2">
-      ${firstName} ${lastName} - ${username}
-    </h2>
-  `;
-    displayUsernames.insertAdjacentHTML("afterbegin", displayUsernamesHTML);
-  });
-};
-displayUsernamesFunction();
-console.log(...userDataAll);
-// html
+// ---------------------------------------------------------------------------
+// -------------------------------HTML----------------------------------------
+// ---------------------------------------------------------------------------
 const html = `
   <div class="movement movement-incoming">
     <div class="movement-date">
@@ -145,9 +130,29 @@ const welcomeUser = `
 <div class="welcome">
 <h2 class="heading-2">Welcome <span class="user-display"></span></h2>
 </div>`;
+// -------------------------------------------------------------------------------
+// --------------------------FUNCTIONS--------------------------------------------
+// -------------------------------------------------------------------------------
+const displayUsernamesFunction = function () {
+  displayUsernames.innerHTML = "";
+  if (userDataAll.length === 0)
+    displayUsernamesContainer.classList.add("hidden");
+  else displayUsernamesContainer.classList.remove("hidden");
+  userDataAll.forEach(function (map) {
+    const firstName = map.get("firstName");
+    const lastName = map.get("lastName");
+    const username = map.get("userName");
+    const displayUsernamesHTML = `
+    <h2 class="heading-2">
+      ${firstName} ${lastName} - ${username}
+    </h2>
+  `;
+    displayUsernames.insertAdjacentHTML("afterbegin", displayUsernamesHTML);
+  });
+};
+displayUsernamesFunction();
+console.log(...userDataAll);
 
-const victims = document.querySelector(".victims");
-victims.textContent = userDataAll.length;
 // function for transactions
 const displayMovements = function (movements) {
   movementsDisplay.innerHTML = "";
