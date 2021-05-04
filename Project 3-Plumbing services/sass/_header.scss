@@ -1,18 +1,17 @@
 .header {
-    background: url(../imgs/headerbackground.jpg);
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.2);
 
-    &__heading {
-        color: $cl-blueD;
-        padding: 0 2rem;
-    }
+  &__heading {
+    color: #fff;
+    padding: 0 2rem;
+  }
 
-    &__logo {
-        width: 6rem;
-        height: 6rem;
-    }
+  &__logo {
+    width: 6rem;
+    height: 6rem;
+  }
 }

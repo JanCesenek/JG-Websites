@@ -1,83 +1,77 @@
 .nav {
+  padding: 3rem;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent);
+
+  & > * {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__item,
+  &__item2 {
+    list-style: none;
+  }
+
+  &__link,
+  &__link2 {
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
     padding: 1rem;
-    margin-bottom: 2rem;
+    font-family: 'Rubik', sans-serif;
 
-    & > * {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+    @include respond(tab-port) {
+      font-size: 2.5rem;
     }
 
-    &__item,
-    &__item2 {
-        list-style: none;
+    &:hover {
+      border: 1px solid grey;
+    }
+  }
+
+  &__link2 {
+    font-size: 2rem;
+  }
+
+  .biggerSize {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+
+  .smallerSize {
+    display: none;
+    @include respond(phone) {
+      display: flex;
+      justify-content: center;
     }
 
-    &__link,
-    &__link2 {
-        font-size: 3rem;
-        text-decoration: none;
-        color: $cl-blue;
-        padding: 1rem;
-        font-family: 'Rubik', sans-serif;
+    .dropdown-btn {
+      font-size: 3rem;
+      color: white;
+      align-self: center;
+      margin-bottom: 3rem;
 
-        &:hover {
-            border: 1px solid $cl-blue;
-        }
+      &:hover {
+        cursor: pointer;
+      }
     }
 
-    &__link2 {
-        font-size: 2rem;
+    .hidden-dropdown {
+      & > * {
+        margin-bottom: 2rem;
+      }
     }
 
-    .biggerSize {
-        @include respond(tab-port) {
-            display: none;
-        }
+    .whole-dropdown {
+      display: flex;
+      flex-direction: column;
     }
-
-    .smallerSize {
-        display: none;
-        justify-content: space-between;
-        align-items: flex-start;
-
-        @include respond(tab-port) {
-            display: flex;
-        }
-
-        .whole-dropdown {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            .dropdown-button {
-                color: $cl-blue;
-                font-size: 3rem;
-                margin-right: 20rem;
-
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-
-            .hidden-dropdown {
-                list-style: none;
-                transform: translateX(-5rem);
-
-                .nav__item2:first-of-type {
-                    margin-top: 1rem;
-                }
-
-                & > * {
-                    padding: 1rem 0;
-                }
-            }
-        }
-    }
+  }
 }
 
 .focused {
-    background-color: $cl-blue;
-    color: #fff !important;
+  background-color: rgba(128, 128, 128, 0.5);
+  color: #fff !important;
 }

@@ -1,65 +1,49 @@
-$cl-blueL: #00C2FF;
-$cl-blue: #007EFF;
-$cl-blueD: #001CFF;
-$cl-greyblue: #7E82A7;
-
-
-
-
-
-
-
+$cl-blueL: #00c2ff;
+$cl-blue: #007eff;
+$cl-blueD: #001cff;
+$cl-greyblue: #7e82a7;
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 
-    @include respond(huge-screen) {
-        font-size: 75%;
-    }
+  @include respond(huge-screen) {
+    font-size: 75%;
+  }
 
-    @include respond(tab-land) {
-        font-size: 56.25%;
-    }
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
 
-    @include respond(tab-port) {
-        font-size: 50%;
-    }
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
 
-    @include respond(phone) {
-        font-size: 37.5%;
-    }
+  @include respond(phone) {
+    font-size: 37.5%;
+  }
 }
 
 body {
-    font-family: 'Roboto Mono', monospace;
-    display: flex;
-    flex-direction: column;
-    background: url(../imgs/plumberbackground.jpg);
-    background-size: contain;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(rgba(128, 128, 128, 0.4), rgba(128, 128, 128, 0.4)), url(../imgs/plumberBackground.jpg);
+  background-size: cover;
+  background-attachment: fixed;
 
-    @include respond(tab-port) {
-        background: none;
+  & > * {
+    margin: 0 10%;
+
+    @include respond(tab-land) {
+      margin: 0;
     }
-
-    & > * {
-        margin: 0 10%;
-        background-color: #fff;
-
-        @include respond(tab-land) {
-            margin: 0 5%;
-        }
-
-        @include respond(tab-port) {
-            margin: 0;
-        }
-    }
+  }
 }
-

@@ -1,31 +1,44 @@
-var chapters = document.getElementsByClassName("nav__link");
+// const header = document.querySelector('.nav');
+// const nav = document.querySelector('.biggerSize');
+// const navHeight = nav.getBoundingClientRect().height;
 
-for (var i = 0; i < chapters.length; i++) {
-  chapters[i].addEventListener("click", function(){
-  var current = document.getElementsByClassName("focused");
-  current[0].className = current[0].className.replace(" focused", "");
-  this.className += " focused";
-  });
-}
+// const stickyNav = function (entries) {
+//   const [entry] = entries;
+//   // console.log(entry);
 
-function ShowTextFor(selectedMenuOption) {
-	var menuContentClass = document.getElementsByClassName("main-content__chapter");
-  
-  for(var i = 0; i < menuContentClass.length; i++) {
-    var menuContentId = document.getElementsByClassName("main-content__chapter")[i].id;
-    if(menuContentId == selectedMenuOption){
-      document.getElementById(menuContentId).classList.remove("hidden");
-    } 
-    else{
-      document.getElementById(menuContentId).classList.add("hidden");
-    }
-  }
-}
+//   if (!entry.isIntersecting) nav.classList.add('sticky');
+//   else nav.classList.remove('sticky');
+// };
 
-$(".dropdown-button").click(function() {
-  $(".hidden-dropdown").toggleClass("hidden");
+// const headerObserver = new IntersectionObserver(stickyNav, {
+//   root: null,
+//   threshold: 0,
+//   rootMargin: `-${navHeight}px`,
+// });
+
+// headerObserver.observe(header);
+
+const chapters = document.querySelectorAll('.main-content__chapter');
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove('section--hidden');
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
 });
 
-$(".nav__link2").click(function() {
-  $(".hidden-dropdown").addClass("hidden");
+chapters.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
+
+$('.dropdown-btn').click(function () {
+  $('.hidden-dropdown').toggleClass('hidden');
 });

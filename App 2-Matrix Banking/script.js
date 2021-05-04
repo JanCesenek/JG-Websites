@@ -31,11 +31,6 @@ const presentDate = new Date();
 const presentDay = presentDate.getDate();
 const presentMonth = presentDate.getMonth() + 1;
 const presentYear = presentDate.getFullYear();
-const presentHour = presentDate.getHours();
-const presentMinutePreset = presentDate.getMinutes();
-const presentMinute = String(presentMinutePreset).padStart(2, 0);
-const presentSecondPresent = presentDate.getSeconds();
-const presentSecond = String(presentMinutePreset).padStart(2, 0);
 
 const updateClock = function () {
   const presentDate = new Date();
@@ -342,7 +337,6 @@ sendMoneyBtn.addEventListener("click", function (e) {
     const senderTransactions = currentAccount.get("transactions");
     let owes = currentAccount.get("owes");
     const owerAmount = currentAccount.get("owerAmount");
-    console.log(...userDataAll);
     // Sending money to a different person
     if (
       sendMoneyUsername.value !== userDisplay.textContent &&
@@ -365,10 +359,8 @@ sendMoneyBtn.addEventListener("click", function (e) {
       // update the balances for both recipient and sender
       recipientBalance += amount;
       recipientAccount.set("currentBalance", recipientBalance);
-      console.log(...userDataAll);
       senderBalance -= amount;
       currentAccount.set("currentBalance", senderBalance);
-      console.log(...userDataAll);
       // overwrite the sender's balance
       currentMoney.textContent = senderBalance;
       console.log(...userDataAll);
