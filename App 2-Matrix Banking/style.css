@@ -1,5 +1,7 @@
 html {
   font-size: 62.5%;
+  width: 100%;
+  height: 100%;
 }
 
 :root {
@@ -13,40 +15,16 @@ html {
   --color-orangered-subtle: rgba(255, 69, 0, 0.2);
 }
 
-@media (min-width: 1800px) {
-  html {
-    font-size: 75%;
-  }
-}
-@media (max-width: 1200px) {
-  html {
-    font-size: 56.25%;
-  }
-}
-@media (max-width: 900px) {
-  html {
-    font-size: 50%;
-  }
-}
-@media (max-width: 630px) {
-  html {
-    font-size: 37.5%;
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(
-      to right,
-      var(--color-black-verytransparent),
-      var(--color-black-verytransparent)
-    ),
-    url(Matrix.jpg);
+  box-sizing: border-box;
+  background: linear-gradient(to right, var(--color-black-verytransparent), var(--color-black-verytransparent)), url(Matrix.jpg);
   background-size: cover;
   background-attachment: fixed;
-  font-family: "Electrolize", sans-serif;
-  overflow: hidden;
+  font-family: 'Electrolize', sans-serif;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 body::-webkit-scrollbar {
@@ -72,15 +50,18 @@ body::-webkit-scrollbar-thumb {
   align-items: baseline;
 }
 
+.bottom-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .display-usernames-container {
-  position: absolute;
-  left: 3rem;
-  top: 20%;
   background: var(--color-black-littletransparent);
   color: yellowgreen;
   border: 1px solid yellowgreen;
   border-radius: 0.5rem;
   padding: 0 1rem;
+  margin-left: 1%;
 }
 
 .display-usernames {
@@ -98,7 +79,6 @@ body::-webkit-scrollbar-thumb {
   justify-content: flex-end;
   align-items: baseline;
   padding-right: 8rem;
-  margin-top: 2rem;
 }
 
 .sign-up-btn {
@@ -107,9 +87,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .movements-display {
-  margin: 15rem 10rem;
-  width: 70rem;
+  margin: 10rem 5rem;
   height: 50rem;
+  width: 60%;
   background-color: var(--color-black-transparent);
   color: yellowgreen;
   border-radius: 2rem;
@@ -143,8 +123,8 @@ body::-webkit-scrollbar-thumb {
 
 .ower {
   position: absolute;
-  left: 15%;
-  top: 10rem;
+  margin-left: 10%;
+  margin-top: 3%;
   padding: 0 1rem;
   border: 1px solid yellowgreen;
   border-radius: 1rem;
@@ -162,17 +142,32 @@ body::-webkit-scrollbar-thumb {
 .delete-account {
   border: 0.5rem solid black;
   border-radius: 1rem;
-  padding-left: 1rem;
-  width: 30rem;
-  height: 15rem;
-  right: 10rem;
+  padding: 0 1rem;
+  margin-left: 5rem;
+  height: 17rem;
   background: var(--color-venomgreen-transparent);
 }
 
+.send-money-container,
+.loan-container,
+.delete-account-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.send-money-btn,
+.loan-btn,
+.delete-account-btn {
+  width: 19.4rem;
+}
+
+.top-interface {
+  display: flex;
+  justify-content: space-between;
+}
+
 .current-balance {
-  position: absolute;
-  right: 45%;
-  top: 2rem;
   padding: 0.5rem;
   border: 1px solid yellowgreen;
   border-radius: 1rem;
@@ -203,18 +198,23 @@ input,
   font-weight: 600;
 }
 
+.clock-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .clock {
-  position: absolute;
-  right: 5rem;
-  bottom: 2rem;
   font-size: 2rem;
+  margin-right: 1%;
+}
+
+.margin {
+  margin-top: 28%;
 }
 
 .logout-btn {
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
   background: var(--color-black-transparent);
+  margin-right: 1%;
 }
 
 .heading-container > .heading-1,
@@ -231,14 +231,12 @@ input,
 }
 
 .welcome {
-  position: absolute;
-  top: 2rem;
-  left: 5rem;
   border: 1px yellowgreen solid;
   border-radius: 1rem;
   background: var(--color-black-transparent);
   color: yellowgreen;
   padding: 0.5rem;
+  margin-left: 1%;
 }
 
 .user-died {
@@ -248,10 +246,7 @@ input,
   top: 0;
   left: 0;
   z-index: 1000;
-  background: radial-gradient(
-    var(--color-red-littletransparent),
-    var(--color-black-littletransparent)
-  );
+  background: radial-gradient(var(--color-red-littletransparent), var(--color-black-littletransparent));
 }
 
 .user-died-container {
@@ -271,9 +266,14 @@ input,
 .bubble-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  right: 10rem;
-  top: 10rem;
+  width: 27%;
+  margin-right: 5%;
+  margin-top: 5%;
+}
+
+.bottom-interface {
+  display: flex;
+  justify-content: space-between;
 }
 
 .send-money,
@@ -281,76 +281,100 @@ input,
   margin-bottom: 5rem;
 }
 
-@media (max-width: 1300px) {
-  .btn,
-  input {
-    font-size: 1rem;
+@media (min-width: 1800px) {
+  html {
+    font-size: 75%;
+  }
+}
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
   }
 
-  .heading-1 {
-    font-size: 1.7rem;
+  .heading-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottom-container {
+    margin-top: 5rem;
+  }
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 50%;
+  }
+
+  .bottom-interface {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .new-account {
+    order: -1;
   }
 
   .movements-display {
-    margin: 15rem 5rem;
+    width: 80%;
+    margin: 10rem 5rem;
   }
 
   .bubble-container {
-    right: 2rem;
+    width: 40rem;
   }
 
   .send-money,
   .loan,
   .delete-account {
-    width: 23rem;
+    height: 20rem;
   }
 
-  body {
-    overflow: scroll;
-  }
-}
-
-@media (max-width: 980px) {
-  .heading-container {
-    flex-direction: column;
-  }
-
-  .login {
-    align-self: flex-end;
-    margin-right: 2rem;
-  }
-
-  .movements-display {
-    margin: 15rem 1rem;
+  .ower {
+    margin-left: 20%;
   }
 }
-
-@media (max-width: 800px) {
-  .movements-display {
-    height: 30rem;
-    margin-left: 2%;
-  }
-
-  .bubble-container {
-    flex-direction: row;
-    top: 55rem;
-    right: 1rem;
-  }
-
-  .send-money,
-  .loan {
-    margin-bottom: 0;
-    margin-right: 1rem;
-  }
-}
-
 @media (max-width: 600px) {
-  .bubble-container {
-    flex-direction: column;
-    margin-right: 35%;
+  html {
+    font-size: 37.5%;
   }
 
-  .current-balance {
-    right: 15%;
+  .top-interface {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logout-btn {
+    align-self: flex-end;
+    order: -1;
+  }
+
+  .welcome {
+    margin-top: -3rem;
+  }
+
+  .login > input {
+    width: 20rem;
+  }
+
+  input,
+  .btn {
+    font-size: 1.5rem;
+  }
+
+  .new-account {
+    padding: 0;
+  }
+
+  .heading-container > .heading-1 {
+    font-size: 1.5rem;
+  }
+
+  .ower {
+    margin-left: 5%;
   }
 }
