@@ -201,8 +201,8 @@ const welcomeUser = `
 // -------------------------------------------------------------------------------
 const displayUsernamesFunction = function () {
   displayUsernames.innerHTML = '';
-  if (userDataAll.length === 0) displayUsernamesContainer.classList.add('hidden');
-  else displayUsernamesContainer.classList.remove('hidden');
+  if (userDataAll.length === 0) displayUsernamesContainer.classList.add('invisible');
+  else displayUsernamesContainer.classList.remove('invisible');
   userDataAll.forEach(function (data) {
     const displayUsernamesHTML = `
     <h2 class="heading-2">

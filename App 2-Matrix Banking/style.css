@@ -187,6 +187,10 @@ body::-webkit-scrollbar-thumb {
   display: none;
 }
 
+.invisible {
+  opacity: 0;
+}
+
 .btn,
 input,
 .clock {
