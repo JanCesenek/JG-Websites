@@ -1,261 +1,246 @@
 .service {
-
-    &, &::after {
+  &,
+  &::after {
     @include fullSize;
     position: relative;
+  }
+
+  .heading-intro {
+    margin: 0 auto;
+    margin-top: 1%;
+    font-size: 3rem;
+    font-family: "Syne Mono", monospace;
+    text-align: center;
+    width: 70%;
+    border: 2px solid yellowgreen;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem yellowgreen;
+
+    animation: fromTop 1.5s ease;
+
+    @include respond(tab-port) {
+      width: 65%;
+      animation: none;
     }
 
-    .heading-intro {
-        margin: 0 auto;
-        margin-top: 1%;
-        font-size: 3rem;
-        font-family: 'Syne Mono', monospace;
-        text-align: center;
-        width: 70%;
-        border: 2px solid yellowgreen;
-        border-radius: .5rem;
-        box-shadow: 0 1rem 2rem yellowgreen;
-
-        animation: fromTop 1.5s ease;
-
-        @include respond(tab-port) {
-            width: 65%;
-            animation: none;
-        }
-
-        @include respond(phone) {
-            font-size: 2.2rem;
-        }
-
-        &:hover {
-            filter: drop-shadow(2rem 4rem 5rem yellowgreen);
-        }
+    @include respond(phone) {
+      font-size: 2.2rem;
     }
 
-    &__cell {
-        perspective: 150rem;
-        text-align: center;
-        @include absCenter;
-        border: 1px solid $cl-white;
-        border-radius: 4px;
-        box-shadow: 0 1rem 3rem rgba($cl-white, .5),.5rem .5rem 2rem rgba($cl-ored, .3);
-        overflow: hidden;
+    &:hover {
+      filter: drop-shadow(2rem 4rem 5rem yellowgreen);
+    }
+  }
+
+  &__cell {
+    perspective: 150rem;
+    text-align: center;
+    @include absCenter;
+    border: 1px solid $cl-white;
+    border-radius: 4px;
+    box-shadow: 0 1rem 3rem rgba($cl-white, 0.5), 0.5rem 0.5rem 2rem rgba($cl-ored, 0.3);
+    overflow: hidden;
+    width: 60rem;
+    height: 15rem;
+    transition: all 1s ease;
+
+    @include respond(tab-land) {
+      width: 50rem;
+    }
+
+    @media only screen and (max-width: 900px), only screen and (hover: none) {
+      position: static;
+      display: block;
+      width: 50rem;
+      height: 40rem;
+      margin-left: 50%;
+      margin-top: 5%;
+      pointer-events: none;
+    }
+
+    &:hover {
+      box-shadow: 0 1rem 3rem rgba($cl-white, 0.5), 0.5rem 0.5rem 2rem rgba($cl-green, 0.3);
+      width: 70rem;
+      height: 20rem;
+
+      @include respond(tab-land) {
         width: 60rem;
-        height: 15rem;
-        transition: all 1s ease;
-
-        @include respond(tab-land) {
-            width: 50rem;
-        }
-
-        @media only screen and (max-width: 900px),
-        only screen and (hover: none) {
-            position: static;
-            display: block;
-            width: 50rem;
-            height: 40rem;
-            margin-left: 50%;
-            margin-top: 5%;
-            pointer-events: none;
-        }
-
-        &:hover {
-            box-shadow: 0 1rem 3rem rgba($cl-white, .5), .5rem .5rem 2rem rgba($cl-green, .3);
-            width: 70rem;
-            height: 20rem;
-
-            @include respond(tab-land) {
-                width: 60rem;
-            }
-        }
-
-        &--1 {
-            top: 25%;
-            left: 25%;
-
-            animation: fromLeft 2s ease;
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                animation: none;
-
-                margin-top: 30rem;
-            }
-        }
-
-        &--2 {
-            top: 25%;
-            left: 75%;
-
-            animation: fromRight 2s ease;
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                animation: none;
-            }
-        }
-
-        &--3 {
-            top: 75%;
-            left: 25%;
-
-            animation: fromLeft 2s ease;
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                animation: none;
-            }
-        }
-
-        &--4 {
-            top: 75%;
-            left: 75%;
-
-            animation: fromRight 2s ease;
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                animation: none;
-            }
-        }
-
-        &--5 {
-            animation: center 3s ease;
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                animation: none;
-            }
-        }
+      }
     }
 
-    &__cell-wrap {
-        position: relative;
-        @include fullSize;
+    &--1 {
+      top: 25%;
+      left: 25%;
+
+      animation: fromLeft 2s ease;
+
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        animation: none;
+
+        margin-top: 30rem;
+      }
     }
 
-    &__frontPart {
-        position: absolute;
-        top: 0;
-        left: 0;
-        backface-visibility: hidden;
-        @include fullSize;
-        background-image: linear-gradient(
-            to right,
-            rgba(31, 28, 44, .6),
-            rgba(146, 141, 171, .6));
+    &--2 {
+      top: 25%;
+      left: 75%;
 
-        background-size: cover;
-        background-repeat: no-repeat;
+      animation: fromRight 2s ease;
 
-        clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 70%, 0 95%);
-
-        @include respond(tab-land) {
-            clip-path: none;
-        }
-
-        @media only screen and (max-width: 900px),
-        only screen and (hover: none) {
-            position: static;
-            height: 50%;
-        }
-
-        .heading-1 {
-            @include absCenter;
-            top: 35%;
-            width: 100%;
-
-            @include respond(tab-land) {
-                font-size: 1.7rem;
-                top: 50%;
-            }
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                top: 25%;
-                left: 50%;
-            }
-        }
-
-        .biggerQuestion {
-            width: 80%;
-        }
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        animation: none;
+      }
     }
 
-    &__backPart {
-        transform: rotateX(180deg);
-        backface-visibility: hidden;
+    &--3 {
+      top: 75%;
+      left: 25%;
+
+      animation: fromLeft 2s ease;
+
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        animation: none;
+      }
+    }
+
+    &--4 {
+      top: 75%;
+      left: 75%;
+
+      animation: fromRight 2s ease;
+
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        animation: none;
+      }
+    }
+
+    &--5 {
+      animation: center 3s ease;
+
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        animation: none;
+      }
+    }
+  }
+
+  &__cell-wrap {
+    position: relative;
+    @include fullSize;
+  }
+
+  &__frontPart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    @include fullSize;
+    background-image: linear-gradient(to right, rgba(31, 28, 44, 0.6), rgba(146, 141, 171, 0.6));
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 70%, 0 95%);
+
+    @include respond(tab-land) {
+      clip-path: none;
+    }
+
+    @media only screen and (max-width: 900px), only screen and (hover: none) {
+      position: static;
+      height: 50%;
+    }
+
+    .heading-1 {
+      @include absCenter;
+      top: 35%;
+      width: 100%;
+
+      @include respond(tab-land) {
         font-size: 1.7rem;
-        position: absolute;
-        top: 0;
-        left: 0;
-        @include fullSize;
-        background: linear-gradient(
-            to right,
-            rgba(93, 98, 109, .8),
-            rgba(41, 42, 43, .8));
+        top: 50%;
+      }
 
-        @media only screen and (max-width: 900px),
-        only screen and (hover: none) {
-            position: static;
-            transform: rotate(0);
-            height: 50%;
-        }
-
-        .service__answer {
-            @include absCenter;
-            width: 98%;
-            color: $cl-white;
-            text-shadow: 2px 4px 6px $cl-black;
-
-            @include respond(tab-land) {
-                font-size: 1.3rem;
-            }
-
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                top: 50%;
-                left: 50%;
-                font-size: 1.7rem;
-            }
-        }
-
-        .bigAnswer {
-            font-size: 1.4rem;
-
-            @include respond(tab-land) {
-                font-size: 1.3rem;
-            }
-            @media only screen and (max-width: 900px),
-            only screen and (hover: none) {
-                top: 50%;
-                left: 50%;
-            }
-        }
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        top: 25%;
+        left: 50%;
+      }
     }
 
-    &__cell:hover &__frontPart {
-        transform: rotateX(-180deg);
+    .biggerQuestion {
+      width: 80%;
+    }
+  }
 
-        @include respond(tab-port) {
-            transform: rotate(0);
-        }
+  &__backPart {
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    font-size: 1.7rem;
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    @include fullSize;
+    background: linear-gradient(to right, rgba(93, 98, 109, 0.8), rgba(41, 42, 43, 0.8));
+
+    @media only screen and (max-width: 900px), only screen and (hover: none) {
+      position: static;
+      transform: rotate(0);
+      height: 50%;
     }
 
-    &__cell:hover &__backPart {
-        transform: rotateX(0deg);
+    .service__answer {
+      @include absCenter;
+      width: 98%;
+      color: $cl-white;
+      text-shadow: 2px 4px 6px $cl-black;
+
+      @include respond(tab-land) {
+        font-size: 1.3rem;
+      }
+
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        top: 50%;
+        left: 50%;
+        font-size: 1.7rem;
+      }
     }
 
-    &__img {
-        width: 3rem;
-        height: 3rem;
-    }
+    .bigAnswer {
+      font-size: 1.4rem;
 
-    &__logo {
-        border-radius: 50%;
-        border: 1px solid $cl-white;
-        background-color: rgba($cl-white, .5);
-        width: 5rem;
-        height: 5rem;
+      @include respond(tab-land) {
+        font-size: 1.3rem;
+      }
+      @media only screen and (max-width: 900px), only screen and (hover: none) {
+        top: 50%;
+        left: 50%;
+      }
     }
+  }
+
+  &__cell:hover &__frontPart {
+    transform: rotateX(-180deg);
+
+    @include respond(tab-port) {
+      transform: rotate(0);
+    }
+  }
+
+  &__cell:hover &__backPart {
+    transform: rotateX(0deg);
+    display: block;
+  }
+
+  &__img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &__logo {
+    border-radius: 50%;
+    border: 1px solid $cl-white;
+    background-color: rgba($cl-white, 0.5);
+    width: 5rem;
+    height: 5rem;
+  }
 }
